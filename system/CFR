@@ -1,0 +1,23 @@
+probeVessels	(
+Cap_RCA_LAD
+);
+
+CFR	{
+Cap_RCA_LAD	3.54857;
+};
+
+Vessels	{
+Cap_RCA_D1	3.66128
+Cap_RCA_D2	3.83682
+Cap_RCA_LAD	3.54857
+Cap_RCA_LCX	3.12665
+Cap_RCA_OM	3.40677
+Cap_RCA_Other	3.11128
+Cap_RCA_PD	3.11603
+Cap_RCA_PLV	2.83874
+Cap_RCA_RIA	3.21627
+Cap_RCA_RM	4.03187
+Cap_RCA_S	3.96861
+Cap_Aorta_Inlet	1
+Cap_Aorta_Outlet	0.904928
+};

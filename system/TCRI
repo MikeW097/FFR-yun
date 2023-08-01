@@ -1,0 +1,28 @@
+probeVessels (
+Cap_RCA_LAD
+Cap_RCA_OM
+Cap_RCA_RIA
+Cap_RCA_
+Cap_RCA_Other
+Cap_RCA_PD
+Cap_RCA_PLV
+Cap_RCA_LCX
+Cap_RCA_D1
+Cap_RCA_RM
+Cap_RCA_D2
+Cap_RCA_S
+);
+TCRI {
+Cap_RCA_LAD -1;
+Cap_RCA_OM -1;
+Cap_RCA_RIA -1;
+Cap_RCA_ -1;
+Cap_RCA_Other -1;
+Cap_RCA_PD -1;
+Cap_RCA_PLV -1;
+Cap_RCA_LCX -1;
+Cap_RCA_D1 -1;
+Cap_RCA_RM -1;
+Cap_RCA_D2 -1;
+Cap_RCA_S -1;
+};

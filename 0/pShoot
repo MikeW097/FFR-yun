@@ -1,0 +1,108 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      pShoot;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 1 -1 -2 0 0 0 0 ];
+
+internalField   uniform 8000;
+
+boundaryField
+{
+    Wall_Aorta
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_LAD_D1
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_LAD_D4
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_LAD_LAD3
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_LAD_RI
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_LCX_LCX1
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_RCA_AM
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_RCA_RPDA1
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_RCA_RPLB2
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_Aorta_Inlet
+    {
+        type            zeroGradient;
+        value           uniform 8000;
+    }
+    Cap_Aorta_Outlet
+    {
+        type            bloodFlowOutletPressure;
+        value           uniform 8000;
+        duration        1e-30;
+        modelName       WindKessel;
+        cycle           on;
+        period          1;
+        WindKesselCoeffs
+        {
+            elements        threeElements;
+            threeElementsCoeffs
+            {
+                flowRateModel   realTimeFlowRate;
+                realTimeFlowRateCoeffs
+                {
+                    scaling         constant 1;
+                }
+                Rd              4.24763e+08;
+                Rp              4.20096e+07;
+                C               1e-09;
+                nSteps          1000;
+                solver          RKF45;
+            }
+        }
+        refValue        uniform 8000;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        Itarget         -9999;
+        skip            1;
+    }
+}
+
+
+// ************************************************************************* //

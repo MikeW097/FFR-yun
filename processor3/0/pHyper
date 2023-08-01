@@ -1,0 +1,393 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      pHyper;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 8000;
+
+boundaryField
+{
+    Wall_Aorta
+    {
+        type            zeroGradient;
+    }
+    Cap_LAD_D1
+    {
+        type            bloodFlowOutletPressure;
+        refValue        uniform 8000;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 8000;
+        modelName       LumpedParameterNetwork;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            0;
+        LumpedParameterNetworkCoeffs 
+        {
+            Ra              2.893e+10;
+            Ca              7.52481e-11;
+            Ramicro         4.70113e+10;
+            Rv              1.4465e+10;
+            Rvmicro         0;
+            Cim             6.08825e-10;
+            dP0dt           10;
+            dQ0dt           0;
+            period          1;
+            intramyocardialPressureModel rawData;
+            secondOrder     on;
+            rawDataCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/plv.dat";
+                scale           1.5;
+            }
+            timeIntegral1   0;
+            timeIntegral2   0;
+            timeIntegral3   0;
+            timeIntegral4   0;
+            nTotalIter      4;
+        }
+    }
+    Cap_LAD_D4
+    {
+        type            bloodFlowOutletPressure;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        modelName       LumpedParameterNetwork;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            0;
+        LumpedParameterNetworkCoeffs 
+        {
+            Ra              4.37718e+11;
+            Ca              4.97336e-12;
+            Ramicro         7.11291e+11;
+            Rv              2.18859e+11;
+            Rvmicro         0;
+            Cim             4.0239e-11;
+            dP0dt           10;
+            dQ0dt           0;
+            period          1;
+            intramyocardialPressureModel rawData;
+            secondOrder     on;
+            rawDataCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/plv.dat";
+                scale           1.5;
+            }
+            timeIntegral1   0;
+            timeIntegral2   0;
+            timeIntegral3   0;
+            timeIntegral4   0;
+            nTotalIter      4;
+        }
+    }
+    Cap_LAD_LAD3
+    {
+        type            bloodFlowOutletPressure;
+        refValue        uniform 8000;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 8000;
+        modelName       LumpedParameterNetwork;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            0;
+        LumpedParameterNetworkCoeffs 
+        {
+            Ra              1.89195e+10;
+            Ca              1.15062e-10;
+            Ramicro         3.07442e+10;
+            Rv              9.45976e+09;
+            Rvmicro         0;
+            Cim             9.3096e-10;
+            dP0dt           10;
+            dQ0dt           0;
+            period          1;
+            intramyocardialPressureModel rawData;
+            secondOrder     on;
+            rawDataCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/plv.dat";
+                scale           1.5;
+            }
+            timeIntegral1   0;
+            timeIntegral2   0;
+            timeIntegral3   0;
+            timeIntegral4   0;
+            nTotalIter      4;
+        }
+    }
+    Cap_LAD_RI
+    {
+        type            bloodFlowOutletPressure;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        modelName       LumpedParameterNetwork;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            0;
+        LumpedParameterNetworkCoeffs 
+        {
+            Ra              1.83074e+10;
+            Ca              1.18909e-10;
+            Ramicro         2.97496e+10;
+            Rv              9.15372e+09;
+            Rvmicro         0;
+            Cim             9.62086e-10;
+            dP0dt           10;
+            dQ0dt           0;
+            period          1;
+            intramyocardialPressureModel rawData;
+            secondOrder     on;
+            rawDataCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/plv.dat";
+                scale           1.5;
+            }
+            timeIntegral1   0;
+            timeIntegral2   0;
+            timeIntegral3   0;
+            timeIntegral4   0;
+            nTotalIter      4;
+        }
+    }
+    Cap_LCX_LCX1
+    {
+        type            bloodFlowOutletPressure;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        modelName       LumpedParameterNetwork;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            0;
+        LumpedParameterNetworkCoeffs 
+        {
+            Ra              2.66106e+10;
+            Ca              8.18066e-11;
+            Ramicro         4.32423e+10;
+            Rv              1.33053e+10;
+            Rvmicro         0;
+            Cim             6.6189e-10;
+            dP0dt           10;
+            dQ0dt           0;
+            period          1;
+            intramyocardialPressureModel rawData;
+            secondOrder     on;
+            rawDataCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/plv.dat";
+                scale           1.5;
+            }
+            timeIntegral1   0;
+            timeIntegral2   0;
+            timeIntegral3   0;
+            timeIntegral4   0;
+            nTotalIter      4;
+        }
+    }
+    Cap_RCA_AM
+    {
+        type            bloodFlowOutletPressure;
+        refValue        uniform 8000;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 8000;
+        modelName       LumpedParameterNetwork;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            0;
+        LumpedParameterNetworkCoeffs 
+        {
+            Ra              2.77456e+10;
+            Ca              1.0216e-10;
+            Ramicro         4.50867e+10;
+            Rv              1.38728e+10;
+            Rvmicro         0;
+            Cim             8.26564e-10;
+            dP0dt           10;
+            dQ0dt           0;
+            period          1;
+            intramyocardialPressureModel rawData;
+            secondOrder     on;
+            rawDataCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/plv.dat";
+                scale           0.5;
+            }
+            timeIntegral1   0;
+            timeIntegral2   0;
+            timeIntegral3   0;
+            timeIntegral4   0;
+            nTotalIter      4;
+        }
+    }
+    Cap_RCA_RPDA1
+    {
+        type            bloodFlowOutletPressure;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        modelName       LumpedParameterNetwork;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            0;
+        LumpedParameterNetworkCoeffs 
+        {
+            Ra              3.84491e+10;
+            Ca              7.37204e-11;
+            Ramicro         6.24798e+10;
+            Rv              1.92246e+10;
+            Rvmicro         0;
+            Cim             5.96465e-10;
+            dP0dt           10;
+            dQ0dt           0;
+            period          1;
+            intramyocardialPressureModel rawData;
+            secondOrder     on;
+            rawDataCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/plv.dat";
+                scale           0.5;
+            }
+            timeIntegral1   0;
+            timeIntegral2   0;
+            timeIntegral3   0;
+            timeIntegral4   0;
+            nTotalIter      4;
+        }
+    }
+    Cap_RCA_RPLB2
+    {
+        type            bloodFlowOutletPressure;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        modelName       LumpedParameterNetwork;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            0;
+        LumpedParameterNetworkCoeffs 
+        {
+            Ra              2.85965e+10;
+            Ca              9.912e-11;
+            Ramicro         4.64693e+10;
+            Rv              1.42982e+10;
+            Rvmicro         0;
+            Cim             8.01971e-10;
+            dP0dt           10;
+            dQ0dt           0;
+            period          1;
+            intramyocardialPressureModel rawData;
+            secondOrder     on;
+            rawDataCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/plv.dat";
+                scale           0.5;
+            }
+            timeIntegral1   0;
+            timeIntegral2   0;
+            timeIntegral3   0;
+            timeIntegral4   0;
+            nTotalIter      4;
+        }
+    }
+    Cap_Aorta_Inlet
+    {
+        type            zeroGradient;
+    }
+    Cap_Aorta_Outlet
+    {
+        type            bloodFlowOutletPressure;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        modelName       WindKessel;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            1;
+        WindKesselCoeffs 
+        {
+            elements        threeElements;
+            threeElementsCoeffs
+            {
+                flowRateModel   realTimeFlowRate;
+                realTimeFlowRateCoeffs
+                {
+                    scaling         constant 1;
+                }
+                Rd              4.24763e+08;
+                Rp              4.20096e+07;
+                C               1e-09;
+                nSteps          1000;
+                solver          RKF45;
+            }
+        }
+    }
+    procBoundary3to0
+    {
+        type            processor;
+        value           uniform 8000;
+    }
+    procBoundary3to2
+    {
+        type            processor;
+        value           uniform 8000;
+    }
+    procBoundary3to7
+    {
+        type            processor;
+        value           uniform 8000;
+    }
+}
+
+
+// ************************************************************************* //

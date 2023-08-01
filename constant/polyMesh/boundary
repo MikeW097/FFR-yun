@@ -1,0 +1,101 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     0.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+11
+(
+    Wall_Aorta
+    {
+        type            wall;
+        nFaces          78862;
+        startFace       842134;
+    }
+
+    Cap_LAD_D1
+    {
+        type            patch;
+        nFaces          179;
+        startFace       920996;
+    }
+
+    Cap_LAD_D4
+    {
+        type            patch;
+        nFaces          44;
+        startFace       921175;
+    }
+
+    Cap_LAD_LAD3
+    {
+        type            patch;
+        nFaces          236;
+        startFace       921219;
+    }
+
+    Cap_LAD_RI
+    {
+        type            patch;
+        nFaces          237;
+        startFace       921455;
+    }
+
+    Cap_LCX_LCX1
+    {
+        type            patch;
+        nFaces          207;
+        startFace       921692;
+    }
+
+    Cap_RCA_AM
+    {
+        type            patch;
+        nFaces          167;
+        startFace       921899;
+    }
+
+    Cap_RCA_RPDA1
+    {
+        type            patch;
+        nFaces          166;
+        startFace       922066;
+    }
+
+    Cap_RCA_RPLB2
+    {
+        type            patch;
+        nFaces          187;
+        startFace       922232;
+    }
+
+    Cap_Aorta_Inlet
+    {
+        type            patch;
+        nFaces          3917;
+        startFace       922419;
+    }
+
+    Cap_Aorta_Outlet
+    {
+        type            patch;
+        nFaces          4673;
+        startFace       926336;
+    }
+
+)
+
+
+// ************************************************************************* //

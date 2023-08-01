@@ -1,0 +1,347 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant/polyMesh";
+    object      meshMetaDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFile     "constant/triSurface/surface.fms";
+
+surfaceMeta
+{
+    nPoints         110694;
+    nFacets         221384;
+    nPatches        11;
+    nFeatureEdges   0;
+    patches
+    {
+        Wall_Aorta
+        {
+            type            wall;
+            nFacets         219416;
+        }
+        Cap_Aorta_Inlet
+        {
+            type            patch;
+            nFacets         736;
+        }
+        Cap_Aorta_Outlet
+        {
+            type            patch;
+            nFacets         904;
+        }
+        Cap_RCA_D1
+        {
+            type            patch;
+            nFacets         39;
+        }
+        Cap_RCA_D2
+        {
+            type            patch;
+            nFacets         41;
+        }
+        Cap_RCA_LAD
+        {
+            type            patch;
+            nFacets         36;
+        }
+        Cap_RCA_LCX
+        {
+            type            patch;
+            nFacets         33;
+        }
+        Cap_RCA_OM
+        {
+            type            patch;
+            nFacets         37;
+        }
+        Cap_RCA_Other
+        {
+            type            patch;
+            nFacets         33;
+        }
+        Cap_RCA_PD
+        {
+            type            patch;
+            nFacets         24;
+        }
+        Cap_RCA_PLV
+        {
+            type            patch;
+            nFacets         56;
+        }
+        Cap_RCA_RIA
+        {
+            type            patch;
+            nFacets         40;
+        }
+        Cap_RCA_RM
+        {
+            type            patch;
+            nFacets         39;
+        }
+        Cap_RCA_S
+        {
+            type            patch;
+            nFacets         35;
+        }
+        Cap_LAD_D1
+        {
+            type            patch;
+            nFacets         41;
+        }
+        Cap_LAD_D2
+        {
+            type            patch;
+            nFacets         41;
+        }
+        Cap_LAD_D41
+        {
+            type            patch;
+            nFacets         50;
+        }
+        Cap_LAD_D42
+        {
+            type            patch;
+            nFacets         45;
+        }
+        Cap_LAD_LAD3
+        {
+            type            patch;
+            nFacets         46;
+        }
+        Cap_LCX_LCX3
+        {
+            type            patch;
+            nFacets         39;
+        }
+        Cap_LCX_OM1
+        {
+            type            patch;
+            nFacets         37;
+        }
+        Cap_LCX_OM2
+        {
+            type            patch;
+            nFacets         41;
+        }
+        Cap_LCX_OM3
+        {
+            type            patch;
+            nFacets         42;
+        }
+        Cap_RCA_AM
+        {
+            type            patch;
+            nFacets         37;
+        }
+        Cap_RCA_RPDA1
+        {
+            type            patch;
+            nFacets         40;
+        }
+        Cap_RCA_RPDA2
+        {
+            type            patch;
+            nFacets         39;
+        }
+        Cap_RCA_RPLB11
+        {
+            type            patch;
+            nFacets         33;
+        }
+        Cap_RCA_RPLB12
+        {
+            type            patch;
+            nFacets         44;
+        }
+        Cap_RCA_RPLB2
+        {
+            type            patch;
+            nFacets         42;
+        }
+        Cap_RCA_RPLB3
+        {
+            type            patch;
+            nFacets         41;
+        }
+        Cap_RCA_D41
+        {
+            type            patch;
+            nFacets         40;
+        }
+        Cap_RCA_D42
+        {
+            type            patch;
+            nFacets         41;
+        }
+        Cap_RCA_LAD3
+        {
+            type            patch;
+            nFacets         39;
+        }
+        Cap_LAD_D4
+        {
+            type            patch;
+            nFacets         30;
+        }
+        Cap_LCX_RVC
+        {
+            type            patch;
+            nFacets         48;
+        }
+        Cap_RCA_CB
+        {
+            type            patch;
+            nFacets         51;
+        }
+        Cap_RCA_RPLB1
+        {
+            type            patch;
+            nFacets         38;
+        }
+        Cap_LAD_D3
+        {
+            type            patch;
+            nFacets         38;
+        }
+        Cap_LAD_D43
+        {
+            type            patch;
+            nFacets         42;
+        }
+        Cap_LAD_D44
+        {
+            type            patch;
+            nFacets         34;
+        }
+        Cap_LCX_OM21
+        {
+            type            patch;
+            nFacets         44;
+        }
+        Cap_LCX_OM22
+        {
+            type            patch;
+            nFacets         45;
+        }
+        Cap_LCX_RVC1
+        {
+            type            patch;
+            nFacets         40;
+        }
+        Cap_LCX_RVC2
+        {
+            type            patch;
+            nFacets         24;
+        }
+        Cap_RCA_RCA4
+        {
+            type            patch;
+            nFacets         55;
+        }
+        Cap_RCA_SAN
+        {
+            type            patch;
+            nFacets         30;
+        }
+        Cap_LAD_D11
+        {
+            type            patch;
+            nFacets         40;
+        }
+        Cap_LAD_D12
+        {
+            type            patch;
+            nFacets         51;
+        }
+        Cap_LAD_D13
+        {
+            type            patch;
+            nFacets         26;
+        }
+        Cap_LAD_LAD31
+        {
+            type            patch;
+            nFacets         43;
+        }
+        Cap_LAD_LAD32
+        {
+            type            patch;
+            nFacets         50;
+        }
+        Cap_LAD_RI
+        {
+            type            patch;
+            nFacets         51;
+        }
+        Cap_LAD_LAD11
+        {
+            type            patch;
+            nFacets         35;
+        }
+        Cap_LAD_LAD12
+        {
+            type            patch;
+            nFacets         27;
+        }
+        Cap_LCX_OM23
+        {
+            type            patch;
+            nFacets         48;
+        }
+        Cap_LCX_OM24
+        {
+            type            patch;
+            nFacets         61;
+        }
+        Cap_RCA_AM1
+        {
+            type            patch;
+            nFacets         37;
+        }
+        Cap_RCA_AM2
+        {
+            type            patch;
+            nFacets         33;
+        }
+        Cap_RCA_SAN1
+        {
+            type            patch;
+            nFacets         39;
+        }
+        Cap_RCA_SAN2
+        {
+            type            patch;
+            nFacets         48;
+        }
+        Cap_LCX_LCX1
+        {
+            type            patch;
+            nFacets         41;
+        }
+    }
+    pointSubsets
+    {
+    }
+    facetSubsets
+    {
+        subset1
+        {
+            nFacets         0;
+        }
+    }
+    featureEdgeSubsets
+    {
+    }
+}

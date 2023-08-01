@@ -1,0 +1,65 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+    "(p|pRest|pHyper|rho|pShoot)"
+    {
+        solver          GAMG; // PBiCGStab; //
+        smoother        SRJ2;//
+        preconditioner  DIC;
+        tolerance       1e-6;
+        relTol          0.1;
+        maxIter 5000;
+    }
+
+    "(p|pRest|pHyper|pShoot|rho)Final"
+    {
+        $p;
+        tolerance       1e-9;
+        relTol          0;
+    }
+}
+
+SIMPLE
+{
+    momentumPredictor no;                                                                                                                                                                               
+    nNonOrthogonalCorrectors 2;
+    consistent      no;
+ 
+    residualControl
+    {
+        #include "SolutionInfo";
+        U               1e-2;
+    }
+}
+ 
+relaxationFactors
+{
+    equations
+    {
+        U               0.4; // 0.9 is more stable but 0.95 more convergent
+        ".*"            0.4; // 0.9 is more stable but 0.95 more convergent
+    }
+}
+
+
+#include "PatientInfo"
+#include "TimingControl"
+#include "ProbeLocation"
+#include "BrainSwitch"
+
+// ************************************************************************* //

@@ -1,0 +1,133 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+15
+(
+    Wall_Aorta
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          10317;
+        startFace       102676;
+    }
+    Cap_LAD_D1
+    {
+        type            patch;
+        nFaces          0;
+        startFace       112993;
+    }
+    Cap_LAD_D4
+    {
+        type            patch;
+        nFaces          0;
+        startFace       112993;
+    }
+    Cap_LAD_LAD3
+    {
+        type            patch;
+        nFaces          0;
+        startFace       112993;
+    }
+    Cap_LAD_RI
+    {
+        type            patch;
+        nFaces          0;
+        startFace       112993;
+    }
+    Cap_LCX_LCX1
+    {
+        type            patch;
+        nFaces          0;
+        startFace       112993;
+    }
+    Cap_RCA_AM
+    {
+        type            patch;
+        nFaces          0;
+        startFace       112993;
+    }
+    Cap_RCA_RPDA1
+    {
+        type            patch;
+        nFaces          166;
+        startFace       112993;
+    }
+    Cap_RCA_RPLB2
+    {
+        type            patch;
+        nFaces          187;
+        startFace       113159;
+    }
+    Cap_Aorta_Inlet
+    {
+        type            patch;
+        nFaces          0;
+        startFace       113346;
+    }
+    Cap_Aorta_Outlet
+    {
+        type            patch;
+        nFaces          2343;
+        startFace       113346;
+    }
+    procBoundary7to3
+    {
+        type            processor;
+        inGroups        1(processor);
+        nFaces          46;
+        startFace       115689;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        7;
+        neighbProcNo    3;
+    }
+    procBoundary7to4
+    {
+        type            processor;
+        inGroups        1(processor);
+        nFaces          542;
+        startFace       115735;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        7;
+        neighbProcNo    4;
+    }
+    procBoundary7to5
+    {
+        type            processor;
+        inGroups        1(processor);
+        nFaces          492;
+        startFace       116277;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        7;
+        neighbProcNo    5;
+    }
+    procBoundary7to6
+    {
+        type            processor;
+        inGroups        1(processor);
+        nFaces          1083;
+        startFace       116769;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        7;
+        neighbProcNo    6;
+    }
+)
+
+// ************************************************************************* //

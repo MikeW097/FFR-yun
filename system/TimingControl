@@ -1,0 +1,8 @@
+timingControl
+{
+    nTotalIteration 10;
+    nHyperemia 1;
+    errorTolerance 0.05;
+    windowSize 10;
+    deviation 0.001;
+}

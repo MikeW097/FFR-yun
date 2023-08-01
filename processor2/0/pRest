@@ -1,0 +1,110 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      pRest;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 8000;
+
+boundaryField
+{
+    Wall_Aorta
+    {
+        type            zeroGradient;
+    }
+    Cap_LAD_D1
+    {
+        type            zeroGradient;
+    }
+    Cap_LAD_D4
+    {
+        type            zeroGradient;
+    }
+    Cap_LAD_LAD3
+    {
+        type            zeroGradient;
+    }
+    Cap_LAD_RI
+    {
+        type            zeroGradient;
+    }
+    Cap_LCX_LCX1
+    {
+        type            zeroGradient;
+    }
+    Cap_RCA_AM
+    {
+        type            zeroGradient;
+    }
+    Cap_RCA_RPDA1
+    {
+        type            zeroGradient;
+    }
+    Cap_RCA_RPLB2
+    {
+        type            zeroGradient;
+    }
+    Cap_Aorta_Inlet
+    {
+        type            zeroGradient;
+    }
+    Cap_Aorta_Outlet
+    {
+        type            bloodFlowOutletPressure;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        modelName       WindKessel;
+        cycle           on;
+        killNegativePressure false;
+        period          1;
+        Itarget         -9999;
+        skip            1;
+        WindKesselCoeffs 
+        {
+            elements        threeElements;
+            threeElementsCoeffs
+            {
+                flowRateModel   realTimeFlowRate;
+                realTimeFlowRateCoeffs
+                {
+                    scaling         constant 1;
+                }
+                Rd              4.24763e+08;
+                Rp              4.20096e+07;
+                C               1e-09;
+                timeLimitC      200;
+                scaleC          100;
+                nSteps          1000;
+                solver          RKF45;
+            }
+        }
+    }
+    procBoundary2to1
+    {
+        type            processor;
+        value           uniform 8000;
+    }
+    procBoundary2to3
+    {
+        type            processor;
+        value           uniform 8000;
+    }
+}
+
+
+// ************************************************************************* //

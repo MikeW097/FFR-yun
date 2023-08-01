@@ -1,0 +1,9 @@
+patientInfo {
+shootFFR on;
+oneShot off;
+    MAP 107.856; // mmHg
+    HR  60;
+    SBP 181;
+    MyocardialDensity 1.06; // g/mL
+    MyocardialVolume 84.0686; // mL
+}

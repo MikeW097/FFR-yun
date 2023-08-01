@@ -1,0 +1,247 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+
+//    blood_Cornary_Wall     
+//    blood_LC1_Wall         
+//    blood_LC1_Sub1_Wall    
+//    blood_LC1_Sub2_Wall    
+//    blood_LC1_Sub3_Wall    
+//    blood_LC2_Wall         
+//    blood_LC2_Sub1_Wall    
+//    blood_RC1_Wall         
+//    blood_RC1_Sub1_Wall    
+//    blood_RC1_Sub2_Wall    
+//    blood_Cornary_Inlet    
+//    blood_LC1_Outlet       
+//    blood_LC1_Sub1_Outlet  
+//    blood_LC1_Sub2_Outlet  
+//    blood_LC1_Sub3_Outlet  
+//    blood_LC2_Outlet       
+//    blood_LC2_Sub1_Outlet  
+//    blood_RC1_Outlet       
+//    blood_RC1_Sub1_Outlet  
+//    blood_RC1_Sub2_Outlet  
+//    blood_Cornary_Outlet   
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+boundary
+{
+    blood_Cornary_Inlet    
+    {
+        type            patch;
+    }
+    blood_LC1_Outlet       
+    {
+        type            patch;
+    }
+    blood_LC1_Sub1_Outlet  
+    {
+        type            patch;
+    }
+    blood_LC1_Sub2_Outlet  
+    {
+        type            patch;
+    }
+    blood_LC1_Sub3_Outlet  
+    {
+        type            patch;
+    }
+    blood_LC2_Outlet       
+    {
+        type            patch;
+    }
+    blood_LC2_Sub1_Outlet  
+    {
+        type            patch;
+    }
+    blood_RC1_Outlet       
+    {
+        type            patch;
+    }
+    blood_RC1_Sub1_Outlet  
+    {
+        type            patch;
+    }
+    blood_RC1_Sub2_Outlet  
+    {
+        type            patch;
+    }
+    blood_Cornary_Outlet   
+    {
+        type            patch;
+    }
+}
+
+U
+{
+    internalField   uniform (0 0 0);
+
+    boundaryField
+    {
+        ".*"
+        {
+            type            zeroGradient;
+            value           uniform (0 0 0);
+        }
+        blood_Cornary_Wall     
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_LC1_Wall         
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_LC1_Sub1_Wall    
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_LC1_Sub2_Wall    
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_LC1_Sub3_Wall    
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_LC2_Wall         
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_LC2_Sub1_Wall    
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_RC1_Wall         
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_RC1_Sub1_Wall    
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_RC1_Sub2_Wall    
+        {
+            type            fixedValue;
+            value           uniform (0 0 0);
+        }
+        blood_Cornary_Inlet
+        {
+            type            cardiovascularFlowRateInletVelocity;
+            flowRateModel	fileInput;//analytical;
+            fileInputCoeffs
+            {
+                level 		10;
+                outOfBounds clamp;
+                file		"constant/scaled_pulse_flow.flow";
+                scale       1; // ml/s to m^3/s
+            }
+            value           uniform (0 0 0);
+        }
+        blood_LC1_Outlet       
+        {
+            type		zeroGradient;
+        }
+        blood_LC1_Sub1_Outlet  
+        {
+            type		zeroGradient;
+        }
+        blood_LC1_Sub2_Outlet  
+        {
+            type		zeroGradient;
+        }
+        blood_LC1_Sub3_Outlet  
+        {
+            type		zeroGradient;
+        }
+        blood_LC2_Outlet       
+        {
+            type		zeroGradient;
+        }
+        blood_LC2_Sub1_Outlet  
+        {
+            type		zeroGradient;
+        }
+        blood_RC1_Outlet       
+        {
+            type		zeroGradient;
+        }
+        blood_RC1_Sub1_Outlet  
+        {
+            type		zeroGradient;
+        }
+        blood_RC1_Sub2_Outlet  
+        {
+            type		zeroGradient;
+        }
+        blood_Cornary_Outlet   
+        {
+            type		zeroGradient;
+            value		uniform (0 0 0);
+        }
+    }
+}
+
+p
+{
+    internalField   uniform 0;
+
+    boundaryField
+    {
+        ".*"
+        {
+            type            zeroGradient;
+            value           uniform 0;
+        }
+        blood_Cornary_Outlet   
+        {
+            type            bloodFlowOutletPressure;
+            duration	1e-30;
+            modelName	WindKessel;
+            WindKesselCoeffs
+            {
+                elements threeElements;
+                threeElementsCoeffs
+                {
+                    flowRateModel fileInput; 
+                    fileInputCoeffs
+                    {	
+                    	outOfBounds clamp;
+                    	file		"constant/scaled_pulse_flow.flow";
+                    	level	10;
+                        scale   1.0;
+                    }
+                    Rd	1.415200e+08;
+                    Rp	1.399700e+07;
+                    C	1.000000e-08; // 1.0/4.0/PI
+                    nSteps	1000;
+                    solver	RKF45;
+                }
+            }
+            value           uniform 0;
+        }
+    }
+}
+
+// ************************************************************************* //

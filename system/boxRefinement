@@ -1,0 +1,558 @@
+box0 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box1 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0523443 -0.0412429 -0.038372);
+};
+
+box2 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.035593 -0.0151382 -0.0307182);
+};
+
+box3 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0442595 -0.0226626 -0.0323156);
+};
+
+box4 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0467851 -0.0253975 -0.0337506);
+};
+
+box5 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box6 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box7 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0158844 -0.0275931 -0.0940088);
+};
+
+box8 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0218241 -0.023814 -0.0947732);
+};
+
+box9 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box10 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box11 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box12 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box13 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box14 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0604154 0.00173295 -0.071717);
+};
+
+box15 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0754306 -0.013308 -0.0734792);
+};
+
+box16 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0525184 -0.0410879 -0.0383584);
+};
+
+box17 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box18 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.035593 -0.0151382 -0.0307182);
+};
+
+box19 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0442595 -0.0226626 -0.0323156);
+};
+
+box20 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0467851 -0.0253975 -0.0337506);
+};
+
+box21 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box22 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box23 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0356994 -0.0150229 -0.0305958);
+};
+
+box24 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box25 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0356994 -0.0150229 -0.0305958);
+};
+
+box26 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0356994 -0.0150229 -0.0305958);
+};
+
+box27 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0356994 -0.0150229 -0.0305958);
+};
+
+box28 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box29 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box30 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0443501 -0.0224793 -0.0321997);
+};
+
+box31 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box32 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0443501 -0.0224793 -0.0321997);
+};
+
+box33 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.035593 -0.0151382 -0.0307182);
+};
+
+box34 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0443501 -0.0224793 -0.0321997);
+};
+
+box35 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box36 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box37 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0467653 -0.0256001 -0.0338922);
+};
+
+box38 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box39 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0467653 -0.0256001 -0.0338922);
+};
+
+box40 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.035593 -0.0151382 -0.0307182);
+};
+
+box41 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0442595 -0.0226626 -0.0323156);
+};
+
+box42 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box43 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0352008 -0.0142318 -0.0310868);
+};
+
+box44 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box45 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0602617 0.00188643 -0.0718872);
+};
+
+box46 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box47 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box48 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box49 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box50 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0602617 0.00188643 -0.0718872);
+};
+
+box51 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0157786 -0.0276533 -0.0937808);
+};
+
+box52 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0157786 -0.0276533 -0.0937808);
+};
+
+box53 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box54 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0754042 -0.0131613 -0.0737163);
+};
+
+box55 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box56 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box57 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box58 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0353123 -0.0139624 -0.0311432);
+};
+
+box59 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0604154 0.00173295 -0.071717);
+};
+
+box60 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.021876 -0.023571 -0.0947768);
+};
+
+box61 {
+type box;
+cellSize 0.00049875;
+lengthX 0.00049875;
+lengthY 0.00049875;
+lengthZ 0.00049875;
+centre (0.0158844 -0.0275931 -0.0940088);
+};
+

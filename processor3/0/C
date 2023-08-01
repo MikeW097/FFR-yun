@@ -1,0 +1,91 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      C;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    Wall_Aorta
+    {
+        type            zeroGradient;
+    }
+    Cap_LAD_D1
+    {
+        type            zeroGradient;
+    }
+    Cap_LAD_D4
+    {
+        type            zeroGradient;
+    }
+    Cap_LAD_LAD3
+    {
+        type            zeroGradient;
+    }
+    Cap_LAD_RI
+    {
+        type            zeroGradient;
+    }
+    Cap_LCX_LCX1
+    {
+        type            zeroGradient;
+    }
+    Cap_RCA_AM
+    {
+        type            zeroGradient;
+    }
+    Cap_RCA_RPDA1
+    {
+        type            zeroGradient;
+    }
+    Cap_RCA_RPLB2
+    {
+        type            zeroGradient;
+    }
+    Cap_Aorta_Inlet
+    {
+        type            contrastFvPatchScalarField;
+        Cmin            3.63632e-321;
+        Cmax            1.23516e-322;
+        ts              6.9267e-310;
+        Td              6.9267e-310;
+        value           nonuniform 0();
+    }
+    Cap_Aorta_Outlet
+    {
+        type            zeroGradient;
+    }
+    procBoundary3to0
+    {
+        type            processor;
+        value           uniform 0;
+    }
+    procBoundary3to2
+    {
+        type            processor;
+        value           uniform 0;
+    }
+    procBoundary3to7
+    {
+        type            processor;
+        value           uniform 0;
+    }
+}
+
+
+// ************************************************************************* //

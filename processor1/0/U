@@ -1,0 +1,102 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    location    "0";
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    Wall_Aorta
+    {
+        type            calculated;
+        value           uniform (0 0 0);
+    }
+    Cap_LAD_D1
+    {
+        type            calculated;
+        value           nonuniform 0();
+    }
+    Cap_LAD_D4
+    {
+        type            calculated;
+        value           nonuniform 0();
+    }
+    Cap_LAD_LAD3
+    {
+        type            calculated;
+        value           nonuniform 0();
+    }
+    Cap_LAD_RI
+    {
+        type            calculated;
+        value           nonuniform 0();
+    }
+    Cap_LCX_LCX1
+    {
+        type            calculated;
+        value           nonuniform 0();
+    }
+    Cap_RCA_AM
+    {
+        type            calculated;
+        value           nonuniform 0();
+    }
+    Cap_RCA_RPDA1
+    {
+        type            calculated;
+        value           nonuniform 0();
+    }
+    Cap_RCA_RPLB2
+    {
+        type            calculated;
+        value           nonuniform 0();
+    }
+    Cap_Aorta_Inlet
+    {
+        type            calculated;
+        value           uniform (0 0 0);
+    }
+    Cap_Aorta_Outlet
+    {
+        type            calculated;
+        value           nonuniform 0();
+    }
+    procBoundary1to0
+    {
+        type            processor;
+        value           uniform (0 0 0);
+    }
+    procBoundary1to2
+    {
+        type            processor;
+        value           uniform (0 0 0);
+    }
+    procBoundary1to4
+    {
+        type            processor;
+        value           uniform (0 0 0);
+    }
+    procBoundary1to5
+    {
+        type            processor;
+        value           uniform (0 0 0);
+    }
+}
+
+
+// ************************************************************************* //

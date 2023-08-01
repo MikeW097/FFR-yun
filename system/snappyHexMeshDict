@@ -1,0 +1,412 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+	version     2.0;
+	format      ascii;
+	class       dictionary;
+	object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+castellatedMesh true;
+
+snap            true;
+
+addLayers       false;
+
+geometry
+{
+    Cap_Aorta_Inlet
+    {
+        type            triSurfaceMesh;
+        file            "Cap_Aorta_Inlet.stl";
+    }
+    Cap_Aorta_Outlet
+    {
+        type            triSurfaceMesh;
+        file            "Cap_Aorta_Outlet.stl";
+    }
+    Cap_LAD_D1
+    {
+        type            triSurfaceMesh;
+        file            "Cap_LAD_D1.stl";
+    }
+    Cap_LAD_D4
+    {
+        type            triSurfaceMesh;
+        file            "Cap_LAD_D4.stl";
+    }
+    Cap_LAD_LAD3
+    {
+        type            triSurfaceMesh;
+        file            "Cap_LAD_LAD3.stl";
+    }
+    Cap_LAD_RI
+    {
+        type            triSurfaceMesh;
+        file            "Cap_LAD_RI.stl";
+    }
+    Cap_LCX_LCX1
+    {
+        type            triSurfaceMesh;
+        file            "Cap_LCX_LCX1.stl";
+    }
+    Cap_RCA_AM
+    {
+        type            triSurfaceMesh;
+        file            "Cap_RCA_AM.stl";
+    }
+    Cap_RCA_RPDA1
+    {
+        type            triSurfaceMesh;
+        file            "Cap_RCA_RPDA1.stl";
+    }
+    Cap_RCA_RPLB2
+    {
+        type            triSurfaceMesh;
+        file            "Cap_RCA_RPLB2.stl";
+    }
+    Wall_Aorta
+    {
+        type            triSurfaceMesh;
+        file            "Wall_Aorta.stl";
+    }
+    Cap_LAD_D1_Cylinder
+    {
+        type            searchableCylinder;
+        point1          ( -0.148631 0.0585688 1.04162 );
+        point2          ( -0.14774 0.0586564 1.04118 );
+        radius          0.000946775;
+    }
+    Cap_LAD_D4_Cylinder
+    {
+        type            searchableCylinder;
+        point1          ( -0.168499 0.0301537 1.05849 );
+        point2          ( -0.167842 0.0295581 1.05803 );
+        radius          0.000329047;
+    }
+    Cap_LAD_LAD3_Cylinder
+    {
+        type            searchableCylinder;
+        point1          ( -0.12589 0.044052 1.00009 );
+        point2          ( -0.126505 0.0441034 0.999302 );
+        radius          0.00110326;
+    }
+    Cap_LAD_RI_Cylinder
+    {
+        type            searchableCylinder;
+        point1          ( -0.180776 0.0600565 1.03095 );
+        point2          ( -0.180482 0.0602758 1.03002 );
+        radius          0.00112503;
+    }
+    Cap_LCX_LCX1_Cylinder
+    {
+        type            searchableCylinder;
+        point1          ( -0.190911 0.0519297 1.02106 );
+        point2          ( -0.190124 0.0523051 1.02057 );
+        radius          0.000995156;
+    }
+    Cap_RCA_AM_Cylinder
+    {
+        type            searchableCylinder;
+        point1          ( -0.145022 -0.0184527 1.00695 );
+        point2          ( -0.14446 -0.01763 1.007 );
+        radius          0.00097897;
+    }
+    Cap_RCA_RPDA1_Cylinder
+    {
+        type            searchableCylinder;
+        point1          ( -0.154226 0.0349213 0.99995 );
+        point2          ( -0.153705 0.0356884 0.999583 );
+        radius          0.000852343;
+    }
+    Cap_RCA_RPLB2_Cylinder
+    {
+        type            searchableCylinder;
+        point1          ( -0.184253 0.0274341 0.999756 );
+        point2          ( -0.184495 0.0282642 1.00025 );
+        radius          0.000936666;
+    }
+}
+
+castellatedMeshControls
+{
+    maxLocalCells   500000;
+    maxGlobalCells  2000000;
+    minRefinementCells 0;
+    nCellsBetweenLevels 1;
+    features        ( );
+    refinementSurfaces
+    {
+        Wall_Aorta
+        {
+            level           ( 4 5 );
+            patchInfo
+            {
+                type            wall;
+                inGroups        (Wall_Aorta);
+            }
+        }
+        Cap_Aorta_Inlet
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_Aorta_Inlet);
+            }
+        }
+        Cap_Aorta_Outlet
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_Aorta_Outlet);
+            }
+        }
+        Cap_LAD_D1
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_LAD_D1);
+            }
+        }
+        Cap_LAD_D4
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_LAD_D4);
+            }
+        }
+        Cap_LAD_LAD3
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_LAD_LAD3);
+            }
+        }
+        Cap_LAD_RI
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_LAD_RI);
+            }
+        }
+        Cap_LCX_LCX1
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_LCX_LCX1);
+            }
+        }
+        Cap_RCA_AM
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_RCA_AM);
+            }
+        }
+        Cap_RCA_RPDA1
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_RCA_RPDA1);
+            }
+        }
+        Cap_RCA_RPLB2
+        {
+            level           ( 5 6 );
+            patchInfo
+            {
+                type            patch;
+                inGroups        (Cap_RCA_RPLB2);
+            }
+        }
+    }
+    resolveFeatureAngle 30;
+    refinementRegions
+    {
+        Cap_Aorta_Inlet
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_Aorta_Outlet
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_LAD_D1
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_LAD_D4
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_LAD_LAD3
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_LAD_RI
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_LCX_LCX1
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_RCA_AM
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_RCA_RPDA1
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_RCA_RPLB2
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Wall_Aorta
+        {
+            mode            distance;
+            levels          ((0.0005 4)(0.002 3));
+        }
+        Cap_LAD_D1_Cylinder
+        {
+            mode            inside;
+            levels          ( ( 1e+15 4 ) );
+        }
+        Cap_LAD_D4_Cylinder
+        {
+            mode            inside;
+            levels          ( ( 1e+15 4 ) );
+        }
+        Cap_LAD_LAD3_Cylinder
+        {
+            mode            inside;
+            levels          ( ( 1e+15 4 ) );
+        }
+        Cap_LAD_RI_Cylinder
+        {
+            mode            inside;
+            levels          ( ( 1e+15 4 ) );
+        }
+        Cap_LCX_LCX1_Cylinder
+        {
+            mode            inside;
+            levels          ( ( 1e+15 4 ) );
+        }
+        Cap_RCA_AM_Cylinder
+        {
+            mode            inside;
+            levels          ( ( 1e+15 4 ) );
+        }
+        Cap_RCA_RPDA1_Cylinder
+        {
+            mode            inside;
+            levels          ( ( 1e+15 4 ) );
+        }
+        Cap_RCA_RPLB2_Cylinder
+        {
+            mode            inside;
+            levels          ( ( 1e+15 4 ) );
+        }
+    }
+    locationInMesh  ( -0.18101 0.00487403 1.04959 );
+    allowFreeStandingZoneFaces true;
+}
+
+snapControls
+{
+    nSmoothPatch    0;
+    tolerance       4;
+    nSolveIter      10;
+    nRelaxIter      10;
+    nFeatureSnapIter 10;
+    implicitFeatureSnap true;
+    explicitFeatureSnap false;
+    multiRegionFeatureSnap true;
+}
+
+addLayersControls
+{
+    relativeSizes   true;
+    layers
+    {
+    }
+    expansionRatio  1;
+    finalLayerThickness 0.3;
+    minThickness    0.25;
+    nGrow           0;
+    featureAngle    30;
+    nRelaxIter      5;
+    nSmoothSurfaceNormals 1;
+    nSmoothNormals  3;
+    nSmoothThickness 10;
+    maxFaceThicknessRatio 0.5;
+    maxThicknessToMedialRatio 0.3;
+    minMedianAxisAngle 90;
+    nBufferCellsNoExtrude 0;
+    nLayerIter      50;
+    nRelaxedIter    20;
+}
+
+meshQualityControls
+{
+    maxNonOrtho     65;
+    maxBoundarySkewness 5;
+    maxInternalSkewness 4;
+    maxConcave      80;
+    minVol          1e-13;
+    minTetQuality   1e-15;
+    minArea         -1;
+    minTwist        0.02;
+    minDeterminant  0.001;
+    minFaceWeight   0.05;
+    minVolRatio     0.01;
+    minTriangleTwist -1;
+    minVolCollapseRatio 0.1;
+    relaxed
+    {
+        maxNonOrtho     75;
+    }
+    nSmoothScale    4;
+    errorReduction  0.75;
+}
+
+writeFlags      ( );
+
+mergeTolerance  1e-06;
+
+
+// ************************************************************************* //

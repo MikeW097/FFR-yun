@@ -1,0 +1,161 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    location    "0";
+    object      UHyper;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    Wall_Aorta
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+    Cap_LAD_D1
+    {
+        type            flowRateOutletVelocityMixture;
+        type            flowRateOutletVelocityMixture;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        volumetricFlowRate constant 1.11503e-07;
+        dirichlet       on;
+        value           nonuniform 0();
+    }
+    Cap_LAD_D4
+    {
+        type            flowRateOutletVelocityMixture;
+        type            flowRateOutletVelocityMixture;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        volumetricFlowRate constant 7.3694e-09;
+        dirichlet       on;
+        value           nonuniform 0();
+    }
+    Cap_LAD_LAD3
+    {
+        type            flowRateOutletVelocityMixture;
+        type            flowRateOutletVelocityMixture;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        volumetricFlowRate constant 1.70506e-07;
+        dirichlet       on;
+        value           nonuniform 0();
+    }
+    Cap_LAD_RI
+    {
+        type            flowRateOutletVelocityMixture;
+        type            flowRateOutletVelocityMixture;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        volumetricFlowRate constant 1.76209e-07;
+        dirichlet       on;
+        value           nonuniform 0();
+    }
+    Cap_LCX_LCX1
+    {
+        type            flowRateOutletVelocityMixture;
+        type            flowRateOutletVelocityMixture;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        volumetricFlowRate constant 1.21226e-07;
+        dirichlet       on;
+        value           nonuniform 0();
+    }
+    Cap_RCA_AM
+    {
+        type            flowRateOutletVelocityMixture;
+        type            flowRateOutletVelocityMixture;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        volumetricFlowRate constant 1.16267e-07;
+        dirichlet       on;
+        value           nonuniform 0();
+    }
+    Cap_RCA_RPDA1
+    {
+        type            flowRateOutletVelocityMixture;
+        type            flowRateOutletVelocityMixture;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        volumetricFlowRate constant 8.39017e-08;
+        dirichlet       on;
+        value           nonuniform 0();
+    }
+    Cap_RCA_RPLB2
+    {
+        type            flowRateOutletVelocityMixture;
+        type            flowRateOutletVelocityMixture;
+        refValue        nonuniform 0();
+        refGradient     nonuniform 0();
+        valueFraction   nonuniform 0();
+        value           nonuniform 0();
+        volumetricFlowRate constant 1.12809e-07;
+        dirichlet       on;
+        value           nonuniform 0();
+    }
+    Cap_Aorta_Inlet
+    {
+        type            cardiovascularFlowRateInletVelocity;
+        flowRateModel   rawDataFlowRate;
+        rawDataFlowRateCoeffs 
+        {
+            outOfBounds     repeat;
+            file            "constant/scaled_pulse_flow.flow";
+            scaling         constant 0.353649;
+        }
+        value           nonuniform 0();
+    }
+    Cap_Aorta_Outlet
+    {
+        type            inletOutlet;
+        inletValue      uniform (0 0 0);
+        value           uniform (0 0 0);
+    }
+    procBoundary6to4
+    {
+        type            processor;
+        value           uniform (0 0 0);
+    }
+    procBoundary6to5
+    {
+        type            processor;
+        value           uniform (0 0 0);
+    }
+    procBoundary6to7
+    {
+        type            processor;
+        value           uniform (0 0 0);
+    }
+}
+
+
+// ************************************************************************* //

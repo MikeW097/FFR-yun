@@ -1,0 +1,550 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      casePreparerDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+debug off;
+
+// * * * * * * * * * * * * * * * * Mesh * * * * * * * * * * * * * * * * * * * //
+
+
+mesh
+{
+    surfaceFeatureExtract off;
+    refinementRegionMethod ((0.5e-3 4)(2.0e-3 3));
+    capRefinement yes;
+
+    //- cfMeshMode
+    cfMeshMode on;
+    #include "MeshingInfo";
+    combinedSurfaceFileName "surface.stl";
+
+    glueBoxRefinement yes;
+
+    stlQuality
+    {
+        minLength 1e-10; 
+        minQuality 1e-15;
+    }
+
+    boundaryFiles               
+    (
+        #include "GeometryFiles"
+    );
+
+    scalingFactor                 1.e-3;                          // mm -> m
+    backgroundBox
+    {
+        dx          4e-3;
+        dy          4e-3;
+        dz          4e-3;
+        expandRatio 0.05;
+    }
+    snappyHexMeshDictTemplate   "system/snappyHexMeshDictTemplate";                 
+}
+
+
+// * * * * * * * * * * * * * * * * Fields * * * * * * * * * * * * * * * * * * * //
+
+fields
+{
+    autoMode                    on;
+    cranialArteryResistanceTotal  5000e6;
+    changeDictionaryTemplate    "system/changeDictionaryDictTemplate";                  
+    transient off;
+    #include "TAG";
+    #include "Itarget.dat";
+    #include "PatientInfo";
+
+    Cap_CranialArtery_Inlet_LICACoeff
+    {
+        fraction 1.0; // 0.5*1.8/1.4*2; 
+    }
+
+    Cap_CranialArtery_Inlet_RICACoeff
+    {
+        fraction 1.0; 
+    }
+   
+    Cap_CranialArtery_Inlet_LVACoeff
+    {
+        fraction 1.0;
+    }
+
+    Cap_CranialArtery_Inlet_RVACoeff
+    {
+        fraction 1.0;
+    } 
+    p
+    {
+        Cap_Left_001
+        {
+            type            zeroGradient;
+            value           uniform 8000;
+        }
+
+        Cap_Left_002
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              1291530e5;
+                }
+            }
+        }
+
+        Cap_Left_003
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              1608160e5;
+                }
+            }
+        }
+
+        Cap_Left_004
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              1607310e5;
+                }
+            }
+        }
+
+        Cap_Left_005
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              1302130e5;
+                }
+            }
+        }
+
+        Cap_Left_006
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              1607180e5;
+                }
+            }
+        }
+
+        Cap_Left_007
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              2657140e5;
+                }
+            }
+        }
+
+        Cap_Left_008
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              2657310e5;
+                }
+            }
+        }
+
+        Cap_Left_009
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              2658020e5;
+                }
+            }
+        }
+
+        Cap_Right_001
+        {
+            type            zeroGradient;
+            value           uniform 8000;
+        }
+
+        Cap_Right_002
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              1811380e5;
+                }
+            }
+        }
+
+        Cap_Right_003
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              2034600e5;
+                }
+            }
+        }
+
+        Cap_Right_004
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              1302130e5;
+                }
+            }
+        }
+
+        Cap_Right_005
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              2698770e5;
+                }
+            }
+        }
+
+        Cap_Right_006
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              1607510e5;
+                }
+            }
+        }
+
+        Cap_Right_007
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              2033970e5;
+                }
+            }
+        }
+
+        Cap_Right_008
+        {
+            type            bloodFlowOutletPressure;
+            value           uniform 8000;
+            duration        1e-30;
+            modelName       WindKessel;
+            WindKesselCoeffs
+            {
+                elements        oneElement;
+                oneElementCoeffs
+                {
+                    flowRateModel   realTimeFlowRate;
+                    realTimeFlowRateCoeffs
+                    {
+                        scale           1;
+                    }
+                    R              1802930e5;
+                }
+            }
+        }
+
+        Wall_0079_0001
+        {
+            type            zeroGradient;
+            value           uniform 8000;
+        }
+    }
+
+    U
+    {
+        Cap_Left_001
+        {
+            type            cardiovascularFlowRateInletVelocity;
+            value           uniform ( 0 0 0 );
+            flowRateModel   rawDataFlowRate;
+            rawDataFlowRateCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/scaled_cerebral_pulse_flow.flow";
+                scale           1;
+            }
+        }
+
+        Cap_Left_002
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Left_003
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Left_004
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Left_005
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Left_006
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Left_007
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Left_008
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Left_009
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Right_001
+        {
+            type            cardiovascularFlowRateInletVelocity;
+            value           uniform ( 0 0 0 );
+            flowRateModel   rawDataFlowRate;
+            rawDataFlowRateCoeffs
+            {
+                outOfBounds     repeat;
+                file            "constant/scaled_cerebral_pulse_flow.flow";
+                scale           0.56;
+            }
+        }
+
+        Cap_Right_002
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Right_003
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Right_004
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Right_005
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Right_006
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Right_007
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Cap_Right_008
+        {
+            type            pressureInletOutletVelocity;
+            value           uniform ( 0 0 0 );
+        }
+
+        Wall_0079_0001
+        {
+            type            fixedValue;
+            value           uniform ( 0 0 0 );
+        }
+    }
+}
